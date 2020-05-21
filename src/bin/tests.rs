@@ -2,8 +2,6 @@
 
 mod algorithms;
 
-
-
 #[cfg(test)]
 mod tests {
     use super::algorithms::sort_methods::*;
@@ -11,8 +9,9 @@ mod tests {
 
     #[test]
     fn test_insertion_sort() {
-        use rand::Rng;
-        use rand::prelude::*;
+        //  Generate random-sized unordered vectors
+        use rand::{Rng, prelude::*};
+
         let mut nums_set: Vec<Vec<i32>> = vec![];
         let mut rng = rand::thread_rng();
         let times = rng.gen_range(10, 20);
@@ -26,6 +25,7 @@ mod tests {
         for num in &mut nums_set {
             let mut num_copy = num.clone();
             num_copy.sort();
+
             insertion_sort(num);
             assert_eq!(num_copy, *num);
         }
