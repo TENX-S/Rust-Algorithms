@@ -13,11 +13,16 @@ pub fn insertion_sort(arr: &mut Vec<i32>) {
             i = i.wrapping_sub(1);
         }
 
-        if i == USIZE_MAX {
-            arr[0] = key
-        } else {
-            arr[i+1] = key
+        match i {
+            USIZE_MAX => { arr[0] = key; },
+            _ => { arr[i+1] = key; },
         }
+
+        // if i == USIZE_MAX {
+        //     arr[0] = key
+        // } else {
+        //     arr[i+1] = key
+        // }
     }
 }
 

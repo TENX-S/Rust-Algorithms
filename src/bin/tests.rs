@@ -21,7 +21,7 @@ mod tests {
             nums.shuffle(&mut rng);
             nums_set.push(nums);
         }
-        // Verify the correctness of the insertion sorting algorithm
+        // Verify the correctness of the insertion sort algorithm
         for num in &mut nums_set {
             let mut num_copy = num.clone();
             num_copy.sort();
