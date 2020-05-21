@@ -1,6 +1,6 @@
 
 
-
+/// Insertion sort algorithm
 const USIZE_MAX:usize = std::usize::MAX;
 
 pub fn insertion_sort(arr: &mut Vec<i32>) {

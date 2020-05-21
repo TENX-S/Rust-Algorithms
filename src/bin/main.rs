@@ -1,21 +1,25 @@
 #![allow(non_snake_case)]
 
-use rand::prelude::*;
+
+use rand::Rng;
 
 const USIZE_MAX:usize = std::usize::MAX;
 
-
-
 fn main() {
+    use rand::prelude::*;
     // let mut L = vec![4, 5, 6, 7, 1, 2 ,3];
     // insertion_sort(&mut L);
     // println!("{:?}", L);
 
-    let mut rng = rand::thread_rng();
-    let mut nums: Vec<i32> = (1..100).collect();
-    nums.shuffle(&mut rng);
-    nums.sort();
-    println!("{:?}", nums);
+    // let mut rng = rand::thread_rng();
+    // let mut nums: Vec<i32> = (1..100).collect();
+    // nums.shuffle(&mut rng);
+    // nums.sort();
+    // println!("{:?}", nums);
+
+
+
+    println!("{:?}", nums_set);
 
 
 }
