@@ -1,2 +1,2 @@
-# Rust_Algorithms
+# Rust&Algorithms
 Learning "Introduction to Algorithms" with Rust
