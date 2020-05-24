@@ -55,7 +55,7 @@ fn merge_two_arr(arr: &mut Vec<i32>, first: usize, mid: usize, last: usize) {
         i += 1;
     }
 
-    while j <= m {
+    while j <= n {
         temp.push(arr[j]);
         j += 1;
     }

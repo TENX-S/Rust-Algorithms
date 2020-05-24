@@ -8,13 +8,13 @@
 fn main() {
     use rand::prelude::*;
 
-    // let mut nums: Vec<i32> = vec![8, 4, 5, 7, 1, 3, 6, 2];
-    let mut rng = thread_rng();
-    let mut nums: Vec<i32> = (1..50_0000).collect();
-    nums.shuffle(&mut rng);
-    divide(&mut nums, 0, 49_9998);
+    let mut nums: Vec<i32> = vec![8, 4, 5, 7, 1, 3, 6, 2];
+    // let mut rng = thread_rng();
+    // let mut nums: Vec<i32> = (1..50_0000).collect();
+    // nums.shuffle(&mut rng);
+    divide(&mut nums, 0, 7);
 
-    // println!("{:?}", nums);
+    println!("{:?}", nums);
 }
 
 // Combine two ordered arrays into one ordered array
@@ -41,7 +41,7 @@ fn merge(arr: &mut Vec<i32>, first: usize, mid: usize, last: usize) {
         i += 1;
     }
 
-    while j <= m {
+    while j <= n {
         temp.push(arr[j]);
         j += 1;
     }
@@ -51,7 +51,6 @@ fn merge(arr: &mut Vec<i32>, first: usize, mid: usize, last: usize) {
     }
 }
 
-
 fn divide(arr: &mut Vec<i32>, first: usize, last: usize) {
     if first < last {
         let mid = (first + last) / 2;
@@ -60,4 +59,6 @@ fn divide(arr: &mut Vec<i32>, first: usize, last: usize) {
         merge(arr, first, mid, last);
     }
 }
+
+
 
