@@ -3,6 +3,7 @@
 /// Insertion sort algorithm
 const USIZE_MAX:usize = std::usize::MAX;
 
+
 pub fn insertion_sort(arr: &mut Vec<i32>) {
     for j in 1..arr.len() {
         let key = arr[j];
@@ -10,25 +11,29 @@ pub fn insertion_sort(arr: &mut Vec<i32>) {
 
         while i != USIZE_MAX && arr[i] > key {
             arr[i+1] = arr[i];
+            // Or write code like follows ⬇️
+            // arr.swap(i+1, i);
             i = i.wrapping_sub(1);
         }
 
         match i {
             USIZE_MAX => { arr[0] = key; },
-            _ => { arr[i+1] = key; },
+            _ => { arr[i+1] = key },
         }
-
-        // if i == USIZE_MAX {
-        //     arr[0] = key
-        // } else {
-        //     arr[i+1] = key
-        // }
     }
 }
 
+pub fn merge_sort(arr: &mut Vec<i32>, first: usize, last: usize) {
 
+    if first < last {
+        let mid = (first + last) / 2;
+        merge_sort(arr, first, mid);
+        merge_sort(arr, mid+1, last);
+        merge_two_arr(arr, first, mid, last);
+    }
+}
 
-pub fn merge(arr: &mut Vec<i32>, first: usize, mid: usize, last: usize) {
+fn merge_two_arr(arr: &mut Vec<i32>, first: usize, mid: usize, last: usize) {
     let mut i = first;
     let mut j = mid + 1;
     let m = mid;
@@ -57,18 +62,5 @@ pub fn merge(arr: &mut Vec<i32>, first: usize, mid: usize, last: usize) {
 
     for i in 0..temp.len() {
         arr[first + i] = temp[i];
-    }
-}
-
-
-pub fn divide(arr: &mut Vec<i32>) {
-
-    let first = 0;
-    let last = arr.len();
-    if first < last {
-        let mid = (first + last) / 2;
-        divide(&mut arr[first..mid+1].to_vec());
-        divide(&mut arr[mid+1..last].to_vec());
-        merge(arr, first, mid, last);
     }
 }

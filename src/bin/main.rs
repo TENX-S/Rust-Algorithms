@@ -49,8 +49,6 @@ fn merge(arr: &mut Vec<i32>, first: usize, mid: usize, last: usize) {
     for i in 0..temp.len() {
         arr[first + i] = temp[i];
     }
-
-
 }
 
 

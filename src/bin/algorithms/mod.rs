@@ -4,6 +4,7 @@ pub mod sort_methods;
 pub fn assert_alg(alg_func: fn(&mut Vec<i32>)) {
     let mut nums_set = random_nums_set(100, 200);
 
+
     for num in &mut nums_set {
         let mut num_copy = num.clone();
         num_copy.sort();
