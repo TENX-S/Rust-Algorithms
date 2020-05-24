@@ -1,2 +1,4 @@
 # Rust&Algorithms
-Learning "Introduction to Algorithms" with Rust
+Learning "Introduction to Algorithms" with Rust. 
+
+If you want to see specific code of these algorithms, go to /src/bin/Algorithms
