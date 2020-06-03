@@ -9,6 +9,7 @@
 //     }
 // }
 //
+
 // fn test<F, T: Debug>(gen: F)
 //     where F: Fn(Builder) -> T
 // {
